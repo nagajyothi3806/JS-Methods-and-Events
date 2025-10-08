@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events with Methods</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mouse Events + Methods Demo</h2>
+    <div id="box"
+         onmouseover="mouseOver()"
+         onmouseout="mouseOut()"
+         onmousedown="mouseDown()"
+         onmouseup="mouseUp()">
+        Hover / Click Me
+    </div>
+    <p id="msg"></p>
+
+    <script>
+        // Mouse Over Event
+        function mouseOver() {
+            document.getElementById("box").style.background = "orange";  // change style
+            document.getElementById("msg").innerHTML = "➡ Mouse is Over the Box"; // update text
+        }
+
+        // Mouse Out Event
+        function mouseOut() {
+            document.getElementById("box").style.background = "lightblue";
+            document.getElementById("msg").innerHTML = "⬅ Mouse Left the Box";
+        }
+
+        // Mouse Down Event
+        function mouseDown() {
+            document.getElementById("box").style.background = "red";
+            document.getElementById("msg").innerHTML = "🔽 Mouse Button Pressed";
+            alert("Mouse button is held down!"); // method to show alert
+        }
+
+        // Mouse Up Event
+        function mouseUp() {
+            document.getElementById("box").style.background = "green";
+            document.getElementById("msg").innerHTML = "🔼 Mouse Button Released";
+            console.log("Mouse button released!"); // another JS method
+        }
+    </script>
+
+</body>
+</html>
